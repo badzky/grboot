@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page with Modal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-blue-500 to-indigo-600 min-h-screen flex items-center justify-center text-white">
+    <!-- Landing Page Content -->
+    <div class="text-center">
+        <h1 class="text-3xl sm:text-5xl font-bold mb-6">Welcome to Grade Viewer</h1>
+        <p class="text-lg sm:text-xl mb-8">Effortlessly check your grades with a click.</p>
+        <button id="openModal" class="bg-white text-blue-500 px-6 py-3 rounded-full shadow-lg hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-white">
+            Request Grade
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg w-4/5 lg:w-3/4 xl:w-[70%] p-6 sm:p-8 text-gray-800">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold">Grade Viewer</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-800 focus:outline-none text-3xl">
+                    &times;
+                </button>
+            </div>
+            <!-- Embedded Grade Viewer Content -->
+            <div class="bg-gray-100 p-4 sm:p-6">
+                <h1 class="text-xl sm:text-2xl font-bold mb-6 text-center">Grade Viewer</h1>
+                <div class="mb-6 flex flex-col sm:flex-row justify-center items-center">
+                    <input 
+                        type="text" 
+                        id="studentNumber" 
+                        placeholder="Enter Student Number" 
+                        class="w-full sm:w-auto p-2 border border-gray-300 rounded mb-4 sm:mb-0 sm:mr-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                    <button 
+                        id="searchStudent" 
+                        class="w-full sm:w-auto bg-blue-500 text-white p-2 rounded shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        Search
+                    </button>
+                    <button 
+                        id="clearSearch" 
+                        class="w-full sm:w-auto bg-gray-300 text-gray-700 p-2 rounded shadow-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 ml-2">
+                        Clear
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table id="gradesTable" class="min-w-full bg-white border border-gray-300 mx-auto text-sm sm:text-base">
+                        <thead>
+                            <tr id="tableHeaders" class="bg-gray-200">
+                                <!-- Headers will be dynamically generated -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="prelimscript.js"></script>
+    <script>
+        const modal = document.getElementById('modal');
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+        const clearSearch = document.getElementById('clearSearch');
+        const studentNumberInput = document.getElementById('studentNumber');
+        const gradesTable = document.getElementById('gradesTable');
+        const tableHeaders = document.getElementById('tableHeaders');
+        const tableBody = gradesTable.querySelector('tbody');
+
+        // Show the modal
+        openModal.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        });
+
+        // Hide the modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        });
+
+        // Close modal on clicking outside the modal
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        });
+
+        // Clear search input and reset the table
+        clearSearch.addEventListener('click', () => {
+            studentNumberInput.value = ''; // Clear the input field
+            tableHeaders.innerHTML = ''; // Clear the headers
+            tableBody.innerHTML = ''; // Clear the body
+        });
+    </script>
+</body>
+</html>
