@@ -2,15 +2,15 @@ document.getElementById('searchStudent').addEventListener('click', searchStudent
 
 const availableImages = {
     fruits: [
-        { path: 'verification/apple.jpg', name: 'apple' },
-        { path: 'verification/banana.png', name: 'banana' },
-        { path: 'verification/orange.jpg', name: 'orange' },
-        { path: 'verification/grapes.jpg', name: 'grapes' },
-        { path: 'verification/watermelon.jpg', name: 'watermelon' },
-        { path: 'verification/manggo.jpg', name: 'mango' },
-        { path: 'verification/strawberry.jpg', name: 'strawberry' },
-        { path: 'verification/pineapple.jpg', name: 'pineapple' },
-        { path: 'verification/kiwi.jpg', name: 'kiwi' }
+        { path: '/verification/verification/apple.jpg', name: 'apple' },
+        { path: '/verification/verification/banana.png', name: 'banana' },
+        { path: '/verification/verification/orange.jpg', name: 'orange' },
+        { path: '/verification/verification/grapes.jpg', name: 'grapes' },
+        { path: '/verification/verification/watermelon.jpg', name: 'watermelon' },
+        { path: '/verification/verification/manggo.jpg', name: 'mango' },
+        { path: '/verification/verification/strawberry.jpg', name: 'strawberry' },
+        { path: '/verification/verification/pineapple.jpg', name: 'pineapple' },
+        { path: '/verification/verification/kiwi.jpg', name: 'kiwi' }
     ]
 };
 
