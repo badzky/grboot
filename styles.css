@@ -1,0 +1,31 @@
+.verification-image-btn {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.verification-image-btn:hover {
+    transform: scale(1.05);
+}
+
+.verification-image-btn img {
+    pointer-events: none;
+}
+
+.verification-image-btn.selected {
+    border-color: #3B82F6;
+    border-width: 2px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+} 
