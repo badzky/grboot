@@ -5,11 +5,11 @@
             {
                 name: 'apple',
                 paths: [
-                    '/verification/apple/apple1.jpg',
-                    '/verification/apple/apple2.jpg',
-                    '/verification/apple/apple3.jpg',
-                    '/verification/apple/apple4.jpg',
-                    '/verification/apple/apple.jpg'
+                    'verification/apple/apple1.jpg',
+                    'verification/apple/apple2.jpg',
+                    'verification/apple/apple3.jpg',
+                    'verification/apple/apple4.jpg',
+                    'verification/apple/apple.jpg'
                 ]
             },
             {
